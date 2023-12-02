@@ -4,8 +4,8 @@
 #include <time.h>
 
 int roll20() {
-	srand(time(NULL));
-	int i = rand() % 20;
+	srandom(time(NULL));
+	int i = random() % 20 + 1; // becomes between 1 and 20
 	return i;
 }
 
