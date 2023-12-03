@@ -5,7 +5,7 @@
 
 int roll20() {
 	srandom(time(NULL));
-	int i = random() % 20 + 1; // becomes between 1 and 20
+	int i = arc4random() % 20 + 1; // becomes between 1 and 20
 	return i;
 }
 
