@@ -1,2 +1,2 @@
 #!bin/bash
-gcc -g -Wall src/main.c src/dice.c -o bin/build-mac
+gcc -g -Wall -Wextra -pedantic src/main.c src/dice.c -o bin/build-mac
