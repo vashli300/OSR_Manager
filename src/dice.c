@@ -20,15 +20,15 @@ int diceRoller(){
 	char input[50];
     int x, d;
 
-    printf("NUMBER OF ROLLS? ");
+    printf("# NUMBER OF ROLLS? ");
     fgets(input, sizeof(input), stdin);
     sscanf(input, "%d", &x);
 
-    printf("WHAT SIDED DIE? ");
+    printf("# WHAT SIDED DIE? ");
     fgets(input, sizeof(input), stdin);
     sscanf(input, "%d", &d);
 	
 	int output = roll(x,d);
-	printf("%d\n", output);
+	printf("# TOTAL ROLL IS %d\n", output);
 	return 0;
 }
