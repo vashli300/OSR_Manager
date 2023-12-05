@@ -4,7 +4,7 @@
 #include <string.h>
 
 void initmenu() {
-    printf("# WELCOME TO THE OD&D MANAGER.\nPLEASE ENTER A COMMAND.\n");
+    printf("> WELCOME TO THE OD&D MANAGER.\n> PLEASE ENTER A COMMAND.");
     interface();
 }
 
@@ -19,8 +19,10 @@ int  interface() {
         diceRoller();
     } else if(strcmp(input, "quit") == 0) {
         return 0;
+    } else if(strcmp(input, "rollsim") == 0) {
+        diceRollerSimultaneous();
     } else {
-        printf("# INVALID. ERR_SIGABRT. PLEASE TRY AGAIN");
+        printf("> INVALID. ERR_SIGABRT. PLEASE TRY AGAIN");
     }
     
     return interface();
