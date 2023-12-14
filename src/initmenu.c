@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "../include/initmenu.h"
 #include "../include/dice.h"
+#include "../include/character.h"
 #include <string.h>
 
 void initmenu() {
@@ -17,12 +18,18 @@ int  interface() {
 
     if(strcmp(input, "roll") == 0) {
         diceRoller();
+
     } else if(strcmp(input, "quit") == 0) {
         return 0;
+
     } else if(strcmp(input, "rollsim") == 0) {
         diceRollerSimultaneous();
+
+    } else if(strcmp(input, "newchar") == 0) {
+        createCharacter();
+    
     } else {
-        printf("> INVALID. ERR_SIGABRT. PLEASE TRY AGAIN");
+        printf("> INVALID. PLEASE TRY AGAIN");
     }
     
     return interface();

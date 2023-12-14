@@ -15,6 +15,8 @@ int roll(int x, int d) {
 	return result;
 
 }
+
+ 
 void rollSimultaneous(int x, int d) {
 	srandom(time(NULL));
     int i, result = 0;
@@ -61,6 +63,5 @@ int diceRollerSimultaneous(){
     printf("> YOUR ROLLS ARE ");
 
 	rollSimultaneous(x,d);
-	//printf("> YOUR ROLLS ARE %d", output); //fix this lmao
 	return 0;
 }
