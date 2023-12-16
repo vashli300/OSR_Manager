@@ -2,8 +2,9 @@
 #include <string.h>
 
 typedef struct Character {
-    char NAME[50];
-    char RACE[50];
+    char NAME[15];
+    char RACE[30];
+    char CLASS[12];
     unsigned long long int EXPERIENCE;
     int LEVEL;
     int HIT_DICE;
@@ -24,3 +25,4 @@ typedef struct Character {
 } Character;
 
 Character createCharacter();
+void chooseClass();
