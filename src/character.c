@@ -20,11 +20,12 @@ Character createCharacter() {
     printf("> YOUR CHARACTER STARTS WITH:\n> STR %d\n> CON %d\n> INT %d\n> WIS %d\n> DEX %d\n> CHA %d\n", 
     newCharacter.ABILITY_STRENGTH,  newCharacter.ABILITY_CONSTITUTION, newCharacter.ABILITY_INTELLIGENCE, newCharacter.ABILITY_WISDOM, newCharacter.ABILITY_DEXTERITY,  newCharacter.ABILITY_CHARISMA);
 
-    printf("> PLEASE CHOOSE A CLASS\n> ");
+    printf("> PLEASE CHOOSE A CLASS:\n> ");
     
     chooseClass();
     
     printf("> YOUR CHARACTER'S CLASS IS %s. GOOD CHOICE!", newCharacter.CLASS);
+    printf("\n> YOUR CHARACTER STARTS WITH %d HITPOINTS.", newCharacter.HITPOINTS_MAX);
 
     newCharacter.GOLD          = roll(3,6) * 10;
     
@@ -38,13 +39,21 @@ void chooseClass() {
     sscanf(input, "%s", input);
 
     if(strcmp(input, "fighter") == 0) {
-       strcpy(newCharacter.CLASS,"Fighter");
+        strcpy(newCharacter.CLASS,"Fighter");
+        strcpy(newCharacter.CLASS,"Magic-User");
+        newCharacter.HITPOINTS_MAX = roll(1,6) + 1;
+        newCharacter.HITPOINTS_CURRENT = newCharacter.HITPOINTS_MAX;
 
     } else if(strcmp(input, "cleric") == 0) {
         strcpy(newCharacter.CLASS,"Cleric");
+        strcpy(newCharacter.CLASS,"Magic-User");
+        newCharacter.HITPOINTS_MAX = roll(1,6);
+        newCharacter.HITPOINTS_CURRENT = newCharacter.HITPOINTS_MAX;
 
-    } else if(strcmp(input, "magicuser") == 0) {
-       strcpy(newCharacter.CLASS,"Magic-User");
+    }else if(strcmp(input, "magicuser") == 0) {
+        strcpy(newCharacter.CLASS,"Magic-User");
+        newCharacter.HITPOINTS_MAX = roll(1,6);
+        newCharacter.HITPOINTS_CURRENT = newCharacter.HITPOINTS_MAX;
 
     } else {
         printf("> INVALID CLASS. PLEASE TRY AGAIN\n> ");
