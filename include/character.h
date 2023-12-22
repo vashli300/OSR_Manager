@@ -26,3 +26,9 @@ typedef struct Character {
 
 Character createCharacter();
 void chooseClass();
+void chooseArmour();
+void chooseWeapon();
+void chooseName();
+void chooseRace();
+void chooseOtherEquipment();
+void saveToText();

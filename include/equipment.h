@@ -23,27 +23,32 @@ Equipment crossbow;
 Equipment arrow;
 Equipment quiver;
 Equipment silver_arrow;
+
 // horse stuff
 Equipment mule;
 Equipment horse;
 Equipment saddle;
 Equipment saddle_bags;
+
 // vehicles
 Equipment cart;
 Equipment wagon;
 Equipment raft;
+
 //boats
 Equipment small_boat;
 Equipment small_merchant_ship;
 Equipment large_merchant_ship;
 Equipment small_galley;
 Equipment large_galley;
+
 //armour
 Equipment leather_armour;
 Equipment chain_armour;
 Equipment plate_armour;
-Equipment helmet;
+//Equipment helmet;
 Equipment shield;
+
 // misc
 Equipment rope;
 Equipment spike;
