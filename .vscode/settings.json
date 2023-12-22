@@ -3,6 +3,7 @@
         "math.h": "c",
         "all.h": "c",
         "stdlib.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "equipment.h": "c"
     }
 }
