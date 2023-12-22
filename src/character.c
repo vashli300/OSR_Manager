@@ -29,7 +29,7 @@ Character createCharacter() {
     printf("> YOUR CHARACTER'S CLASS IS %s. GOOD CHOICE!\n", newCharacter.CLASS);
     printf("> YOUR CHARACTER STARTS WITH %d HITPOINTS.\n", newCharacter.HITPOINTS_MAX);
 
-    printf("> YOUR CHARARACTER STARTS WITH %d GOLD. CHOOSE SOME EQUIPMENT!\n", newCharacter.GOLD);
+    printf("> YOU WITH %d GOLD. CHOOSE SOME EQUIPMENT!\n", newCharacter.GOLD);
     
     chooseArmour();
     
@@ -72,24 +72,28 @@ void chooseArmour() {
     if(strcmp("Magic-User", newCharacter.CLASS) == 0 ) {
         newCharacter.ARMOUR_CLASS = 7;
         newCharacter.EQUIPMENT[0] = leather_armour;
+        newCharacter.GOLD = newCharacter.GOLD - leather_armour.COST;
         return;
 
     } else {
-        printf("> CHOOSE AN ARMOUR: LEATHER, CHAIN OR PLATE.\n");
+        printf("> CHOOSE AN ARMOUR: LEATHER (5 GP), CHAIN (30 GP) OR PLATE (50 GP).\n> ");
         fgets(input, sizeof(input), stdin);
         sscanf(input, "%s", input);
 
         if(strcmp("leather", input) == 0) {
             newCharacter.ARMOUR_CLASS = 7;
             newCharacter.EQUIPMENT[0] = leather_armour;
+            newCharacter.GOLD = newCharacter.GOLD - leather_armour.COST;
 
         } else if(strcmp("chain", input) == 0) {
             newCharacter.ARMOUR_CLASS = 5;
             newCharacter.EQUIPMENT[0] = chain_armour;
+            newCharacter.GOLD = newCharacter.GOLD - chain_armour.COST;
 
-        } else if(strcmp("plate", input) == 0) {
+        } else if(strcmp("plate", input) == 0 && newCharacter.GOLD >= 50){
             newCharacter.ARMOUR_CLASS = 3;
             newCharacter.EQUIPMENT[0] = plate_armour;
+            newCharacter.GOLD = newCharacter.GOLD - plate_armour.COST;
 
         } else {
             printf("> WE DON'T SELL THAT HERE.\n");
