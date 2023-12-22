@@ -29,7 +29,7 @@ Character createCharacter() {
     printf("> YOUR CHARACTER'S CLASS IS %s. GOOD CHOICE!\n", newCharacter.CLASS);
     printf("> YOUR CHARACTER STARTS WITH %d HITPOINTS.\n", newCharacter.HITPOINTS_MAX);
 
-    printf("> YOU WITH %d GOLD. CHOOSE SOME EQUIPMENT!\n", newCharacter.GOLD);
+    printf("> YOU START WITH %d GOLD. CHOOSE SOME EQUIPMENT!\n", newCharacter.GOLD);
     
     chooseArmour();
     
