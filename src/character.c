@@ -65,13 +65,35 @@ void chooseClass() {
 }
 
 void chooseArmour() {
+
+    char input[50];
+
+
     if(strcmp("Magic-User", newCharacter.CLASS) == 0 ) {
         newCharacter.ARMOUR_CLASS = 7;
         newCharacter.EQUIPMENT[0] = leather_armour;
         return;
+
     } else {
-         printf("> CHOOSE AN ARMOUR: LEATHER, SHIELD OR PLATE.");
-        
+        printf("> CHOOSE AN ARMOUR: LEATHER, CHAIN OR PLATE.\n");
+        fgets(input, sizeof(input), stdin);
+        sscanf(input, "%s", input);
+
+        if(strcmp("leather", input) == 0) {
+            newCharacter.ARMOUR_CLASS = 7;
+            newCharacter.EQUIPMENT[0] = leather_armour;
+
+        } else if(strcmp("chain", input) == 0) {
+            newCharacter.ARMOUR_CLASS = 5;
+            newCharacter.EQUIPMENT[0] = chain_armour;
+
+        } else if(strcmp("plate", input) == 0) {
+            newCharacter.ARMOUR_CLASS = 3;
+            newCharacter.EQUIPMENT[0] = plate_armour;
+
+        } else {
+            printf("> WE DON'T SELL THAT HERE.\n");
+        }
     }
    
 
