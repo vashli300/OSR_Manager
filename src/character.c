@@ -32,7 +32,8 @@ Character createCharacter() {
     printf("> YOU START WITH %d GOLD. CHOOSE SOME EQUIPMENT!\n", newCharacter.GOLD);
     
     chooseArmour();
-    
+    chooseRace();
+
     return newCharacter;
 }
 
@@ -100,5 +101,31 @@ void chooseArmour() {
         }
     }
    
-
 }
+
+void chooseRace() {
+    printf("> CHOOSE A RACE: HUMAN, ELF, DWARF OR HALFLING\n> ");
+
+    char input[50];
+
+    fgets(input, sizeof(input), stdin);
+    sscanf(input, "%s", input);
+
+    if(strcmp("human", input) == 0 ) {
+        strcopy(newCharacter.RACE, "HUMAN");
+
+    } else if(strcmp("elf", input) == 0) {
+        strcopy(newCharacter.RACE, "ELF");
+
+    } else if(strcmp("dwarf", input) == 0) {
+        strcopy(newCharacter.RACE, "DWARF");
+
+    } else if(strcmp("halfling", input) == 0) {
+        strcopy(newCharacter.RACE, "HALFLING");
+
+    } else {
+        printf("> YOU CAN'T PLAY AS THAT!\n");
+        chooseRace();
+    }
+}
+
