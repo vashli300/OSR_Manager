@@ -31,7 +31,6 @@ typedef struct Character {
 
 Character createCharacter();
 
-void chooseArmour();
 void chooseWeapon();
 void chooseName();
 void chooseOtherEquipment();
