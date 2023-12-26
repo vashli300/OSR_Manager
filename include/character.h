@@ -1,11 +1,13 @@
 #include "equipment.h"
 #include <string.h>
 #include "species-handler.h"
+#include "class-handler.h"
+#include "dice.h"
 
 typedef struct Character {
     char NAME[15];
     Species SPECIES;
-    char CLASS[12];
+    Class CLASS;
     unsigned long long int EXPERIENCE;
     int LEVEL_FIGHTER;
     int LEVEL_MAGIC_USER;
@@ -28,10 +30,9 @@ typedef struct Character {
 } Character;
 
 Character createCharacter();
-void chooseClass();
+
 void chooseArmour();
 void chooseWeapon();
 void chooseName();
-void chooseSpecies();
 void chooseOtherEquipment();
 void saveToText();

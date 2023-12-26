@@ -60,4 +60,4 @@ Equipment mirror;
 Equipment cross;
 Equipment rations;
 
-
+void chooseArmour();
