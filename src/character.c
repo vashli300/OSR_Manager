@@ -22,8 +22,8 @@ Character createCharacter() {
     printf("> YOUR CHARACTER STARTS WITH:\n> STR %d\n> CON %d\n> INT %d\n> WIS %d\n> DEX %d\n> CHA %d\n", 
     newCharacter.ABILITY_STRENGTH,  newCharacter.ABILITY_CONSTITUTION, newCharacter.ABILITY_INTELLIGENCE, newCharacter.ABILITY_WISDOM, newCharacter.ABILITY_DEXTERITY,  newCharacter.ABILITY_CHARISMA);
 
-    printf("> PLEASE CHOOSE A CLASS:\n> ");
-    
+    chooseSpecies();
+
     chooseClass();
     
     printf("> YOUR CHARACTER'S CLASS IS %s. GOOD CHOICE!\n", newCharacter.CLASS);
@@ -32,12 +32,13 @@ Character createCharacter() {
     printf("> YOU START WITH %d GOLD. CHOOSE SOME EQUIPMENT!\n", newCharacter.GOLD);
     
     chooseArmour();
-    chooseRace();
 
     return newCharacter;
 }
 
 void chooseClass() {
+    printf("> PLEASE CHOOSE A CLASS:\n> ");
+
     char input[50];
 
     fgets(input, sizeof(input), stdin);
@@ -48,18 +49,30 @@ void chooseClass() {
         newCharacter.HITPOINTS_MAX = roll(1,6) + 1;
         newCharacter.HITPOINTS_CURRENT = newCharacter.HITPOINTS_MAX;
 
+        newCharacter.LEVEL_FIGHTER = 1;
+        newCharacter.LEVEL_CLERIC = 0;
+        newCharacter.LEVEL_MAGIC_USER = 0;
+
     } else if(strcmp(input, "cleric") == 0) {
         strcpy(newCharacter.CLASS,"Cleric");
         newCharacter.HITPOINTS_MAX = roll(1,6);
         newCharacter.HITPOINTS_CURRENT = newCharacter.HITPOINTS_MAX;
+
+        newCharacter.LEVEL_FIGHTER = 0;
+        newCharacter.LEVEL_CLERIC = 1;
+        newCharacter.LEVEL_MAGIC_USER = 0;
 
     }else if(strcmp(input, "magicuser") == 0) {
         strcpy(newCharacter.CLASS,"Magic-User");
         newCharacter.HITPOINTS_MAX = roll(1,6);
         newCharacter.HITPOINTS_CURRENT = newCharacter.HITPOINTS_MAX;
 
+        newCharacter.LEVEL_FIGHTER = 0;
+        newCharacter.LEVEL_CLERIC = 0;
+        newCharacter.LEVEL_MAGIC_USER = 1;
+
     } else {
-        printf("> INVALID CLASS. PLEASE TRY AGAIN\n> ");
+        printf("> YOU CAN'T CHOOSE THAT! PLEASE TRY AGAIN\n> ");
         chooseClass();
         return;
     }
@@ -103,8 +116,8 @@ void chooseArmour() {
    
 }
 
-void chooseRace() {
-    printf("> CHOOSE A RACE: HUMAN, ELF, DWARF OR HALFLING\n> ");
+void chooseSpecies() {
+    printf("> CHOOSE A SPECIES: HUMAN, ELF, DWARF OR HALFLING\n> ");
 
     char input[50];
 
@@ -112,20 +125,20 @@ void chooseRace() {
     sscanf(input, "%s", input);
 
     if(strcmp("human", input) == 0 ) {
-        strcopy(newCharacter.RACE, "HUMAN");
+        newCharacter.SPECIES = Human;
 
     } else if(strcmp("elf", input) == 0) {
-        strcopy(newCharacter.RACE, "ELF");
+        newCharacter.SPECIES = Elf;
 
     } else if(strcmp("dwarf", input) == 0) {
-        strcopy(newCharacter.RACE, "DWARF");
+        newCharacter.SPECIES = Dwarf;
 
     } else if(strcmp("halfling", input) == 0) {
-        strcopy(newCharacter.RACE, "HALFLING");
+        newCharacter.SPECIES = Halfling;
 
     } else {
         printf("> YOU CAN'T PLAY AS THAT!\n");
-        chooseRace();
+        chooseSpecies();
     }
 }
 

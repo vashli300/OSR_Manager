@@ -1,12 +1,15 @@
 #include "equipment.h"
 #include <string.h>
+#include "species-handler.h"
 
 typedef struct Character {
     char NAME[15];
-    char RACE[30];
+    Species SPECIES;
     char CLASS[12];
     unsigned long long int EXPERIENCE;
-    int LEVEL;
+    int LEVEL_FIGHTER;
+    int LEVEL_MAGIC_USER;
+    int LEVEL_CLERIC;
     int HIT_DICE;
     int HITPOINTS_CURRENT;
     int HITPOINTS_MAX;
@@ -29,6 +32,6 @@ void chooseClass();
 void chooseArmour();
 void chooseWeapon();
 void chooseName();
-void chooseRace();
+void chooseSpecies();
 void chooseOtherEquipment();
 void saveToText();

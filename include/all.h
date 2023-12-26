@@ -5,6 +5,8 @@
 #include "dice.h"
 #include "initmenu.h"
 #include <string.h>
+#include <stdbool.h>
+
 
 
 
