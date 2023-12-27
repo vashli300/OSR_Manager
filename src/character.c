@@ -30,7 +30,9 @@ Character createCharacter() {
 
     printf("> YOU START WITH %d GOLD. CHOOSE SOME EQUIPMENT!\n", newCharacter.GOLD);
     
-    chooseArmour();
+    chooseArmour(newCharacter);
+    
+    chooseOtherEquipment(newCharacter);
 
     return newCharacter;
 }
