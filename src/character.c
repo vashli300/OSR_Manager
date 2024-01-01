@@ -48,6 +48,6 @@ void chooseName() {
     sscanf(input, "%s", input);
     strcpy(newCharacter.NAME, input);
 
-    printf("\n> FINISHED SETUP FOR %s.", newCharacter.NAME);
+    printf("> FINISHED SETUP FOR %s.", newCharacter.NAME);
 
 }

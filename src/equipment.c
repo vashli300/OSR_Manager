@@ -1,8 +1,7 @@
 #include "../include/character.h"
 #include <stdio.h>
 
-
-
+Equipment dagger = {"Weapon", "Small and nifty blade", 3, true, true, true};
 
 Equipment leather_armour = {"Armour", "Provides an AC of 3", 15, true, true, true};
 Equipment chain_armour = {"Armour", "Provides an AC of 5", 30, true, true, false};
@@ -51,10 +50,41 @@ void chooseArmour() {
 }
 
 void chooseWeapon() {
+    char input[50];
+
     if(strcmp(newCharacter.CLASS.NAME, "FIGHTER") == 0 || strcmp(newCharacter.CLASS.NAME, "CLERIC") == 0) {
-        printf("> CHOOSE A WEAPON!\n> SWORD (10), DAGGER (3), SHORTBOW AND ARROWS (30) OR NONE\n> ");
+        printf("> CHOOSE A WEAPON!\n> SWORD (10GP), DAGGER (3GP), SHORTBOW AND 20 ARROWS (type bow) (30GP) OR NONE\n> ");
+      
+        fgets(input, sizeof(input), stdin);
+        sscanf(input, "%s", input);
+
+        if(strcmp(input, "sword")==0 && newCharacter.GOLD >= 10) {
+            newCharacter.EQUIPMENT[1] = sword;
+            newCharacter.GOLD = newCharacter.GOLD - 10;
+        } else if(strcmp(input, "dagger")==0 && newCharacter.GOLD >= 3) {
+            newCharacter.EQUIPMENT[1] = dagger;
+            newCharacter.GOLD = newCharacter.GOLD - 3;
+        } else if(strcmp(input, "bow")==0 && newCharacter.GOLD >= 30) {
+            newCharacter.EQUIPMENT[1] = shortbow;
+            newCharacter.EQUIPMENT[2] = arrow;
+            newCharacter.ARROWS_NORMAL = 20;
+            newCharacter.GOLD = newCharacter.GOLD - 30;
+        } else {
+            printf("> NO WEAPONS FOR YOU!\n");
+        }
+
     } else if(strcmp(newCharacter.CLASS.NAME,"MAGIC-USER") == 0) {
         printf("> WOULD YOU LIKE TO PURCHASE A DAGGER for 3GP? (y/n)\n> ");
+
+        fgets(input, sizeof(input), stdin);
+        sscanf(input, "%s", input);
+
+        if(strcmp(input, "y")==0 && newCharacter.GOLD >= 3) {
+            newCharacter.EQUIPMENT[1] = dagger;
+            newCharacter.GOLD = newCharacter.GOLD - 3;
+        } else {
+            printf("> NO DAGGER FOR YOU!\n");
+        }
     }
 
 }

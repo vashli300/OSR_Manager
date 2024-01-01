@@ -16,6 +16,8 @@ typedef struct Character {
     int HITPOINTS_CURRENT;
     int HITPOINTS_MAX;
     Equipment EQUIPMENT[20];
+    int ARROWS_NORMAL;
+    int ARROWS_MAGIC;
     int ARMOUR_CLASS;
     int GOLD;
     int ELECTRUM;
