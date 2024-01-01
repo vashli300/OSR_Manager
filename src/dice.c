@@ -1,8 +1,5 @@
-#include <time.h>
-#include <math.h>
-#include <stdlib.h>
+
 #include "../include/dice.h"
-#include <stdio.h>
 
 int roll(int x, int d) {
 	srandom(time(NULL));

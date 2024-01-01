@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "../include/all.h"
 #include "../include/character.h"
 
 Species Human = {"HUMAN", 100, 100, 100, true, true};

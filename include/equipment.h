@@ -1,4 +1,4 @@
-#include <stdbool.h>
+#include "all.h"
 
 
 typedef struct Equipment {

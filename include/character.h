@@ -1,5 +1,5 @@
+#include "all.h"
 #include "equipment.h"
-#include <string.h>
 #include "species-handler.h"
 #include "class-handler.h"
 #include "dice.h"

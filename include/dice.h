@@ -1,3 +1,5 @@
+#include "all.h"
+
 #define d20 = 20+1;
 #define d12 = 12+1;
 #define d10 = 10+1;

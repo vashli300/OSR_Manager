@@ -1,5 +1,5 @@
 #include "../include/character.h"
-#include <stdio.h>
+
 
 Equipment dagger = {"Weapon", "Small and nifty blade", 3, true, true, true};
 

@@ -5,6 +5,8 @@
         "stdlib.h": "c",
         "string.h": "c",
         "equipment.h": "c",
-        "stdbool.h": "c"
+        "stdbool.h": "c",
+        "dice.h": "c",
+        "character.h": "c"
     }
 }
