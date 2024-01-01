@@ -4,6 +4,7 @@
         "all.h": "c",
         "stdlib.h": "c",
         "string.h": "c",
-        "equipment.h": "c"
+        "equipment.h": "c",
+        "stdbool.h": "c"
     }
 }

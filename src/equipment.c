@@ -1,10 +1,13 @@
 #include "../include/character.h"
 #include <stdio.h>
 
-Equipment leather_armour = {"Armour", "Provides an AC of 3", 15};
-Equipment chain_armour = {"Armour", "Provides an AC of 5", 30};
-Equipment plate_armour = {"Armour", "Provides an AC of 7", 50};
-Equipment shield = {"Armour", "Adds + 1 to AC or provide AC 8 alone.", 10};
+
+
+
+Equipment leather_armour = {"Armour", "Provides an AC of 3", 15, true, true, true};
+Equipment chain_armour = {"Armour", "Provides an AC of 5", 30, true, true, false};
+Equipment plate_armour = {"Armour", "Provides an AC of 7", 50, true, true, false};
+Equipment shield = {"Armour", "Adds + 1 to AC or provide AC 8 alone.", 10, true, true, true};
 
 extern struct Character newCharacter;
 
@@ -45,4 +48,13 @@ void chooseArmour() {
         }
     }
    
+}
+
+void chooseWeapon() {
+    if(strcmp(newCharacter.CLASS.NAME, "FIGHTER") == 0 || strcmp(newCharacter.CLASS.NAME, "CLERIC") == 0) {
+        printf("> CHOOSE A WEAPON!\n> SWORD (10), DAGGER (3), SHORTBOW AND ARROWS (30) OR NONE\n> ");
+    } else if(strcmp(newCharacter.CLASS.NAME,"MAGIC-USER") == 0) {
+        printf("> WOULD YOU LIKE TO PURCHASE A DAGGER for 3GP? (y/n)\n> ");
+    }
+
 }

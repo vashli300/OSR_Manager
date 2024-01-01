@@ -1,11 +1,17 @@
+#include <stdbool.h>
+
 
 typedef struct Equipment {
-    char TYPE[10];
+    char TYPE[50];
     char DESCRIPTION[50];
     int COST;
+    bool FIGHTER_YES;
+    bool CLERIC_YES;
+    bool MAGICUSER_YES;
 } Equipment;
 
 //weapons
+
 Equipment dagger;
 Equipment hand_axe;
 Equipment mace;
@@ -61,3 +67,4 @@ Equipment cross;
 Equipment rations;
 
 void chooseArmour();
+void chooseWeapon();
