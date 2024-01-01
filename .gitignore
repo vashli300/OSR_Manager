@@ -1,2 +1,3 @@
 build_counter.txt
 *.dSYM
+.DS_STORE
