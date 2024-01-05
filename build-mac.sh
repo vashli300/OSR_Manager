@@ -1,5 +1,3 @@
-#!bin/bash
-
 #!/bin/bash
 
 counter_file="build_counter.txt"

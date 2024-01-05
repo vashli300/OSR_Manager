@@ -10,4 +10,4 @@ typedef struct Spell {
 } Spell;
 
 Spell SPELL_LIGHT;
-void light();
+void light(int PLAYER_LEVEL);
