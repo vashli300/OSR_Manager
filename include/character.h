@@ -7,7 +7,7 @@
 typedef struct Character {
     char NAME[15];
     Species SPECIES;
-    Class CLASS;
+    Class CLASS[1];
     unsigned long long int EXPERIENCE;
     unsigned int LEVEL_FIGHTER;
     unsigned int LEVEL_MAGIC_USER;

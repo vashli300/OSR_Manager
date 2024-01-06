@@ -16,7 +16,7 @@ void chooseClass() {
     sscanf(input, "%s", input);
 
     if(strcmp(input, "fighter") == 0) {
-        newCharacter.CLASS = Fighter;
+        newCharacter.CLASS[0] = Fighter;
         newCharacter.HITPOINTS_MAX = roll(1,6) + 1;
         newCharacter.HITPOINTS_CURRENT = newCharacter.HITPOINTS_MAX;
 
@@ -25,7 +25,7 @@ void chooseClass() {
         newCharacter.LEVEL_MAGIC_USER = 0;
 
     } else if((strcmp(input, "cleric") == 0) && (newCharacter.SPECIES.CLERIC_ALLOWED == true)) {
-        newCharacter.CLASS = Cleric;
+        newCharacter.CLASS[0] = Cleric;
         newCharacter.HITPOINTS_MAX = roll(1,6);
         newCharacter.HITPOINTS_CURRENT = newCharacter.HITPOINTS_MAX;
 
@@ -34,7 +34,7 @@ void chooseClass() {
         newCharacter.LEVEL_MAGIC_USER = 0;
 
     }else if((strcmp(input, "magicuser") == 0) && (newCharacter.SPECIES.MAGIC_USER_ALLOWED == true)) {
-        newCharacter.CLASS = Magicuser;
+        newCharacter.CLASS[0] = Magicuser;
         newCharacter.HITPOINTS_MAX = roll(1,6);
         newCharacter.HITPOINTS_CURRENT = newCharacter.HITPOINTS_MAX;
 

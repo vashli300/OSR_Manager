@@ -22,8 +22,8 @@ Character createCharacter() {
 
     chooseClass();
     
-    printf("> YOUR CHARACTER'S CLASS IS %s. GOOD CHOICE!\n", newCharacter.CLASS.NAME);
-    printf("> THEY START WITH %d HITPOINTS.\n", newCharacter.HITPOINTS_MAX);
+    printf("> YOUR CHARACTER'S CLASS IS %s. GOOD CHOICE!\n", newCharacter.CLASS[0].NAME);
+    printf("> THEY START WITH %ld HITPOINTS.\n", newCharacter.HITPOINTS_MAX);
 
     printf("> YOU START WITH %d GOLD. CHOOSE SOME EQUIPMENT!\n", newCharacter.GOLD);
     

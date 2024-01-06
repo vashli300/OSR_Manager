@@ -15,7 +15,7 @@ void chooseArmour() {
     char input[50];
 
 
-    if(strcmp(newCharacter.CLASS.NAME,  "MAGIC-USER") == 0) {
+    if(strcmp(newCharacter.CLASS[0].NAME,  "MAGIC-USER") == 0) {
         newCharacter.ARMOUR_CLASS = 7;
         newCharacter.EQUIPMENT[0] = leather_armour;
         newCharacter.GOLD = newCharacter.GOLD - leather_armour.COST;
@@ -52,7 +52,7 @@ void chooseArmour() {
 void chooseWeapon() {
     char input[50];
 
-    if(strcmp(newCharacter.CLASS.NAME, "FIGHTER") == 0 || strcmp(newCharacter.CLASS.NAME, "CLERIC") == 0) {
+    if(strcmp(newCharacter.CLASS[0].NAME, "FIGHTER") == 0 || strcmp(newCharacter.CLASS[0].NAME, "CLERIC") == 0) {
         printf("> CHOOSE A WEAPON!\n> SWORD (10GP), DAGGER (3GP), SHORTBOW AND 20 ARROWS (type bow) (30GP) OR NONE\n> ");
       
         fgets(input, sizeof(input), stdin);
@@ -73,7 +73,7 @@ void chooseWeapon() {
             printf("> NO WEAPONS FOR YOU!\n");
         }
 
-    } else if(strcmp(newCharacter.CLASS.NAME,"MAGIC-USER") == 0) {
+    } else if(strcmp(newCharacter.CLASS[0].NAME,"MAGIC-USER") == 0) {
         printf("> WOULD YOU LIKE TO PURCHASE A DAGGER for 3GP? (y/n)\n> ");
 
         fgets(input, sizeof(input), stdin);
