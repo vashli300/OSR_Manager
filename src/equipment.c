@@ -53,7 +53,7 @@ void chooseWeapon() {
     char input[50];
 
     if(strcmp(newCharacter.CLASS[0].NAME, "FIGHTER") == 0 || strcmp(newCharacter.CLASS[0].NAME, "CLERIC") == 0) {
-        printf("> CHOOSE A WEAPON!\n> SWORD (10GP), DAGGER (3GP), SHORTBOW AND 20 ARROWS (type bow) (30GP) OR NONE\n> ");
+        printf("> CHOOSE A WEAPON!\n> SWORD (10GP), DAGGER (3GP), SHORTBOW AND 20 ARROWS (type \"bow\") (30GP) OR NONE\n> ");
       
         fgets(input, sizeof(input), stdin);
         sscanf(input, "%s", input);

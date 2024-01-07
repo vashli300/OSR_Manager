@@ -3,11 +3,12 @@
 #include "species-handler.h"
 #include "class-handler.h"
 #include "dice.h"
+#include "spells.h"
 
 typedef struct Character {
     char NAME[15];
     Species SPECIES;
-    Class CLASS[1];
+    Class CLASS[3];
     unsigned long long int EXPERIENCE;
     unsigned int LEVEL_FIGHTER;
     unsigned int LEVEL_MAGIC_USER;
@@ -29,11 +30,20 @@ typedef struct Character {
     unsigned int ABILITY_WISDOM;
     unsigned int ABILITY_DEXTERITY;
     unsigned int ABILITY_CHARISMA;
+    Spell LEVEL_ONE_SPELL_SLOT[7];
+    Spell LEVEL_TWO_SPELL_SLOT[7];
+    Spell LEVEL_THREE_SPELL_SLOT[7];
+    Spell LEVEL_FOUR_SPELL_SLOT[7];
+    Spell LEVEL_FIVE_SPELL_SLOT[7];
+    Spell LEVEL_SIX_SPELL_SLOT[7];
+    Spell LEVEL_SEVEN_SPELL_SLOT[7];
+    Spell LEVEL_EIGHT_SPELL_SLOT[7];
+    
 } Character;
 
 Character createCharacter();
 
-
 void chooseName();
 void chooseOtherEquipment();
 void saveToText();
+void multiclassSetup();

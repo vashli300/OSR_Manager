@@ -21,6 +21,7 @@ void chooseSpecies() {
 
     } else if(strcmp("elf", input) == 0) {
         newCharacter.SPECIES = Elf;
+        multiclassSetup();
 
     } else if(strcmp("dwarf", input) == 0) {
         newCharacter.SPECIES = Dwarf;

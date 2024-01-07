@@ -19,8 +19,10 @@ Character createCharacter() {
     newCharacter.ABILITY_STRENGTH,  newCharacter.ABILITY_CONSTITUTION, newCharacter.ABILITY_INTELLIGENCE, newCharacter.ABILITY_WISDOM, newCharacter.ABILITY_DEXTERITY,  newCharacter.ABILITY_CHARISMA);
 
     chooseSpecies();
-
-    chooseClass();
+    if(strcmp(newCharacter.CLASS[0].NAME, Fighter.NAME) != 0 && strcmp(newCharacter.CLASS[0].NAME, Magicuser.NAME) != 0 && strcmp(newCharacter.CLASS[0].NAME, Cleric.NAME) != 0) {
+         chooseClass();
+    }
+    
     
     printf("> YOUR CHARACTER'S CLASS IS %s. GOOD CHOICE!\n", newCharacter.CLASS[0].NAME);
     printf("> THEY START WITH %ld HITPOINTS.\n", newCharacter.HITPOINTS_MAX);
