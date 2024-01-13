@@ -6,10 +6,11 @@ void initmenu() {
     interface();
 }
 
-int  interface() {
-    printf("\n> ");
+int interface() {
     char input[50];
-
+    
+    printf("\n> ");
+    
     fgets(input, sizeof(input), stdin);
     sscanf(input, "%s", input);
 

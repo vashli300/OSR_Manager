@@ -9,7 +9,6 @@ Class Fighter;
 Class Cleric;
 Class Magicuser;
 
-
 typedef struct Species {
     char NAME[15];
     int MAX_LEVEL_FIGHTER;
@@ -24,8 +23,6 @@ Species Elf;
 Species Dwarf;
 Species Halfling;
 
-
-
 typedef struct Equipment {
     char TYPE[50];
     char DESCRIPTION[50];
@@ -34,62 +31,8 @@ typedef struct Equipment {
     bool CLERIC_YES;
     bool MAGICUSER_YES;
 } Equipment;
-typedef struct Spell {
-    char NAME[30];
-    bool CLERIC_YES;
-    bool MAGICUSER_YES;
-    int DURATION;
-    int DAMAGE;
-    int LEVEL;
-    int RANGE;
-
-} Spell;
-
-//1st level
-Spell SPELL_DETECT_MAGIC;
-Spell SPELL_HOLD_PORTAL;
-Spell SPELL_READ_MAGIC;
-Spell SPELL_READ_LANGUAGES;
-Spell SPELL_PROTECTION_EVIL;
-Spell SPELL_LIGHT;
-Spell SPELL_CHARM_PERSON;
-Spell SPELL_SLEEP;
-
-Spell VOID;
-typedef struct Character {
-    char NAME[15];
-    Species SPECIES;
-    Class CLASS[3];
-    unsigned long long int EXPERIENCE;
-    unsigned int LEVEL_FIGHTER;
-    unsigned int LEVEL_MAGIC_USER;
-    unsigned int LEVEL_CLERIC;
-    unsigned int HIT_DICE;
-    int HITPOINTS_CURRENT;
-    unsigned long int HITPOINTS_MAX;
-    Equipment EQUIPMENT[20];
-    unsigned int ARROWS_NORMAL;
-    unsigned int ARROWS_MAGIC;
-    int ARMOUR_CLASS;
-    unsigned int GOLD;
-    unsigned int ELECTRUM;
-    unsigned int SILVER;
-    unsigned int PLATINUM;
-    unsigned int ABILITY_STRENGTH;
-    unsigned int ABILITY_CONSTITUTION;
-    unsigned int ABILITY_INTELLIGENCE;
-    unsigned int ABILITY_WISDOM;
-    unsigned int ABILITY_DEXTERITY;
-    unsigned int ABILITY_CHARISMA;
-    Spell SPELL_SLOT[15][15];
-    int NUMBER_SPELLS;
-    
-} Character;
-
-
 
 //weapons
-
 Equipment dagger;
 Equipment hand_axe;
 Equipment mace;
@@ -130,7 +73,7 @@ Equipment large_galley;
 Equipment leather_armour;
 Equipment chain_armour;
 Equipment plate_armour;
-//Equipment helmet;
+Equipment helmet;
 Equipment shield;
 
 // misc
@@ -143,6 +86,61 @@ Equipment lantern;
 Equipment mirror;
 Equipment cross;
 Equipment rations;
+
+typedef struct Spell {
+    char NAME[30];
+    bool CLERIC_YES;
+    bool MAGICUSER_YES;
+    int DURATION;
+    int DAMAGE;
+    int LEVEL;
+    int RANGE;
+} Spell;
+
+//1st level
+Spell SPELL_DETECT_MAGIC;
+Spell SPELL_HOLD_PORTAL;
+Spell SPELL_READ_MAGIC;
+Spell SPELL_READ_LANGUAGES;
+Spell SPELL_PROTECTION_EVIL;
+Spell SPELL_LIGHT;
+Spell SPELL_CHARM_PERSON;
+Spell SPELL_SLEEP;
+
+//Placeholder
+Spell VOID;
+
+typedef struct Character {
+    char NAME[15];
+    Species SPECIES;
+    Class CLASS[3];
+    unsigned long long int EXPERIENCE;
+    unsigned int LEVEL_FIGHTER;
+    unsigned int LEVEL_MAGIC_USER;
+    unsigned int LEVEL_CLERIC;
+    unsigned int HIT_DICE;
+    int HITPOINTS_CURRENT;
+    unsigned long int HITPOINTS_MAX;
+    Equipment EQUIPMENT[20];
+    unsigned int ARROWS_NORMAL;
+    unsigned int ARROWS_MAGIC;
+    int ARMOUR_CLASS;
+    unsigned int GOLD;
+    unsigned int ELECTRUM;
+    unsigned int SILVER;
+    unsigned int PLATINUM;
+    unsigned int ABILITY_STRENGTH;
+    unsigned int ABILITY_CONSTITUTION;
+    unsigned int ABILITY_INTELLIGENCE;
+    unsigned int ABILITY_WISDOM;
+    unsigned int ABILITY_DEXTERITY;
+    unsigned int ABILITY_CHARISMA;
+    Spell SPELL_SLOT[15][15];
+    int NUMBER_SPELLS;
+    
+} Character;
+
+/*Functions*/
 
 void createCharacter();
 

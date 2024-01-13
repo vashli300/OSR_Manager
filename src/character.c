@@ -1,10 +1,7 @@
 #include "../include/character.h"
 #include "../include/dice.h"
 
-
-
 void createCharacter() { 
-
     struct Character newCharacter;
     
     newCharacter.EXPERIENCE = 0;
@@ -15,10 +12,12 @@ void createCharacter() {
     newCharacter.ABILITY_WISDOM       = roll(3,6);
     newCharacter.ABILITY_DEXTERITY    = roll(3,6);
     newCharacter.ABILITY_CHARISMA     = roll(3,6);
-    newCharacter.GOLD          = roll(3,6) * 10;
+    newCharacter.GOLD                 = roll(3,6) * 10;
 
     printf("> YOUR CHARACTER STARTS WITH:\n> STR %d\n> CON %d\n> INT %d\n> WIS %d\n> DEX %d\n> CHA %d\n", 
-    newCharacter.ABILITY_STRENGTH,  newCharacter.ABILITY_CONSTITUTION, newCharacter.ABILITY_INTELLIGENCE, newCharacter.ABILITY_WISDOM, newCharacter.ABILITY_DEXTERITY,  newCharacter.ABILITY_CHARISMA);
+    
+    newCharacter.ABILITY_STRENGTH,  newCharacter.ABILITY_CONSTITUTION, newCharacter.ABILITY_INTELLIGENCE, 
+    newCharacter.ABILITY_WISDOM, newCharacter.ABILITY_DEXTERITY,  newCharacter.ABILITY_CHARISMA);
 
     chooseSpecies(&newCharacter);
 
@@ -30,7 +29,7 @@ void createCharacter() {
     printf("> YOUR CHARACTER'S CLASS IS %s. GOOD CHOICE!\n", newCharacter.CLASS[0].NAME);
     printf("> THEY START WITH %ld HITPOINTS.\n", newCharacter.HITPOINTS_MAX);
 
-    printf("> YOU START WITH %d GOLD. CHOOSE SOME EQUIPMENT!\n", newCharacter.GOLD);
+    printf("> YOU HAVE %d GOLD. CHOOSE SOME EQUIPMENT!\n", newCharacter.GOLD);
     
     chooseArmour(&newCharacter);
 
@@ -48,9 +47,9 @@ void createCharacter() {
 }
 
 void chooseName(Character *newCharacter) {
-    printf("> DON'T FORGET - YOUR HERO NEEDS A NAME!\n> ");
-    
     char input[50];
+    
+    printf("> DON'T FORGET - YOUR HERO NEEDS A NAME!\n> ");
 
     fgets(input, sizeof(input), stdin);
     sscanf(input, "%s", input);

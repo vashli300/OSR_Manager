@@ -2,8 +2,9 @@
 #include "../include/dice.h"
 
 void multiclassSetup(Character *newCharacter) {
-    printf("> WOULD YOU LIKE TO SETUP MULTICLASSING? (y/n)\n> ");
     char input[50];
+    
+    printf("> WOULD YOU LIKE TO SETUP MULTICLASSING? (y/n)\n> ");
 
     fgets(input, sizeof(input), stdin);
     sscanf(input, "%s", input);
@@ -40,13 +41,7 @@ void multiclassSetup(Character *newCharacter) {
             printf("> I SEE HOW THIS IS.\n");
             return;
         }
-
-        
-
-
     } else {
         return;
     }
-
-
 }

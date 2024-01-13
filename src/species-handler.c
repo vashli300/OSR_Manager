@@ -8,9 +8,9 @@ Species Halfling = {"HALFLING", 4, 0, 0, false, false};
 
 
 void chooseSpecies(Character *newCharacter) {
-    printf("> CHOOSE A SPECIES: HUMAN, ELF, DWARF OR HALFLING\n> ");
-
     char input[50];
+    
+    printf("> CHOOSE A SPECIES: HUMAN, ELF, DWARF OR HALFLING\n> ");
 
     fgets(input, sizeof(input), stdin);
     sscanf(input, "%s", input);

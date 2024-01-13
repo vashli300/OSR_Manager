@@ -1,34 +1,30 @@
-
 #include "../include/dice.h"
 
 int roll(int x, int d) {
-	srandom(time(NULL));
-    int i, result = 0;
-	for (i = 0; i < x; i++) 
-    {
+	int i, result = 0;
+    srandom(time(NULL));
+
+    for (i = 0; i < x; i++) {
         int roll = arc4random() % d + 1; // becomes between 1 and number
         result = result + roll;
     }
 	return result;
-
 }
 
- 
 void rollSimultaneous(int x, int d) {
-	srandom(time(NULL));
-    int i, result = 0;
-	for (i = 0; i < x; i++) 
-    {
+	int i, result = 0;
+    srandom(time(NULL));
+	
+    for (i = 0; i < x; i++) {
         int roll = arc4random() % d + 1; // becomes between 1 and number
         result = result + roll;
         printf("%d ", result);
         result = 0;
     }
 	return;
-
 }
 
-int diceRoller(){
+int diceRoller() {
 	char input[50];
     int x, d;
 
@@ -45,7 +41,7 @@ int diceRoller(){
 	return 0;
 }
 
-int diceRollerSimultaneous(){
+int diceRollerSimultaneous() {
 	char input[50];
     int x, d;
 

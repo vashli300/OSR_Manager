@@ -6,9 +6,9 @@ Class Cleric = {"CLERIC", true};
 Class Magicuser = {"MAGIC-USER", true};
 
 void chooseClass(Character *newCharacter) {
+    char input[50]; 
+    
     printf("> PLEASE CHOOSE A CLASS:\n> ");
-
-    char input[50];
 
     fgets(input, sizeof(input), stdin);
     sscanf(input, "%s", input);

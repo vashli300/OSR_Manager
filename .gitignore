@@ -3,3 +3,4 @@ build_counter.txt
 .DS_STORE
 .vscode
 .json
+.VSCodeCounter

@@ -26,5 +26,7 @@ void castSpell(Character *caster, Character *target, Spell *spell) {
     int positionIndex;
     findSpellPosition(&caster->SPELL_SLOT[level], 16, 16, spell, &levelIndex, &positionIndex);
 
+    caster->SPELL_SLOT[levelIndex][positionIndex] = VOID;
+
 }
 
