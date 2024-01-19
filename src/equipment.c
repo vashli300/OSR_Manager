@@ -16,8 +16,8 @@ void chooseArmour(Character *newCharacter) {
         newCharacter->ARMOUR_CLASS = 7;
         newCharacter->EQUIPMENT[0] = leather_armour;
         newCharacter->GOLD = newCharacter->GOLD - leather_armour.COST;
+        return;
         
-
     } else {
         printf("> CHOOSE AN ARMOUR: LEATHER (5 GP), CHAIN (30 GP) OR PLATE (50 GP).\n> ");
         fgets(input, sizeof(input), stdin);
@@ -40,15 +40,17 @@ void chooseArmour(Character *newCharacter) {
 
         } else {
             printf("> WE DON'T SELL THAT HERE.\n");
-            //chooseArmour(Character *newCharacter);
+            chooseArmour(&newCharacter);
         }
+
+        return;
     }
 }
 
 void chooseWeapon(Character *newCharacter) {
     char input[50];
 
-    if(strcmp(newCharacter->CLASS[0].NAME, Magicuser.NAME) == 0 || strcmp(newCharacter->CLASS[0].NAME, Cleric.NAME) == 0) {
+    if(strcmp(newCharacter->CLASS[0].NAME, Fighter.NAME) == 0 || strcmp(newCharacter->CLASS[0].NAME, Cleric.NAME) == 0) {
         printf("> CHOOSE A WEAPON!\n> SWORD (10GP), DAGGER (3GP), SHORTBOW AND 20 ARROWS (type \"bow\") (30GP) OR NONE\n> ");
       
         fgets(input, sizeof(input), stdin);

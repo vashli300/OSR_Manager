@@ -111,7 +111,7 @@ Spell SPELL_SLEEP;
 Spell VOID;
 
 typedef struct Character {
-    char NAME[15];
+    char NAME[31];
     Species SPECIES;
     Class CLASS[3];
     unsigned long long int EXPERIENCE;
