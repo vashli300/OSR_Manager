@@ -8,7 +8,7 @@ Class Magicuser = {"MAGIC-USER", true};
 void chooseClass(Character *newCharacter) {
     char input[50]; 
     
-    printf("> PLEASE CHOOSE A CLASS:\n> ");
+    printf("> PLEASE CHOOSE A CLASS: FIGHTER, CLERIC OR MAGIC-USER\n> ");
 
     fgets(input, sizeof(input), stdin);
     sscanf(input, "%s", input);

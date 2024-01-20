@@ -40,7 +40,7 @@ void chooseArmour(Character *newCharacter) {
 
         } else {
             printf("> WE DON'T SELL THAT HERE.\n");
-            chooseArmour(&newCharacter);
+            chooseArmour(newCharacter);
         }
 
         return;

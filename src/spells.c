@@ -14,7 +14,50 @@ void findSpellPosition(Spell array[][15], int rows, int cols, Spell *target, int
     }
 
 void chooseSpells(Character *newCharacter) {
-    return;
+    char input[50];
+    
+    printf("> CHOOSE ONE OF THESE SPELLS: DETECT MAGIC, HOLD PORTAL, READ MAGIC, READ LANGUAGES,\n> PROTECTION FROM EVIL, LIGHT, CHARM PERSON OR SLEEP.");
+    printf("\n> ");
+    
+    fgets(input, sizeof(input), stdin);
+    sscanf(input, "%s", input);
+
+    if (strcmp("detectmagic", input) == 0 ) {
+        newCharacter->SPELL_SLOT[0][0] = SPELL_DETECT_MAGIC;
+        return;
+
+    } else if(strcmp("holdportal", input) == 0 ) {
+        newCharacter->SPELL_SLOT[0][0] = SPELL_HOLD_PORTAL;
+        return;
+
+    } else if(strcmp("readmagic", input) == 0 ) {
+        newCharacter->SPELL_SLOT[0][0] = SPELL_READ_MAGIC;
+        return;
+
+    } else if(strcmp("readlanguages", input) == 0 ) {
+        newCharacter->SPELL_SLOT[0][0] = SPELL_READ_LANGUAGES;
+        return;
+
+    } else if(strcmp("protectionfromevil", input) == 0 ) {
+        newCharacter->SPELL_SLOT[0][0] = SPELL_PROTECTION_EVIL;
+        return;
+
+    } else if(strcmp("light", input) == 0 ) {
+        newCharacter->SPELL_SLOT[0][0] = SPELL_LIGHT;
+        return;
+
+    } else if(strcmp("charmperson", input) == 0 ) {
+        newCharacter->SPELL_SLOT[0][0] = SPELL_CHARM_PERSON;
+        return;
+
+    } else if(strcmp("sleep", input) == 0 ) {
+        newCharacter->SPELL_SLOT[0][0] = SPELL_SLEEP;
+        return;
+
+    } else {
+        chooseSpells(newCharacter);
+    }
+
 }
 
 void castSpell(Character *caster, Character *target, Spell *spell) {

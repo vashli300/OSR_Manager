@@ -35,7 +35,7 @@ void createCharacter() {
 
     chooseWeapon(&newCharacter);
 
-    if(strcmp(newCharacter.CLASS[0].NAME, Magicuser.NAME)== 0) {
+    if(strcmp(newCharacter.CLASS[0].NAME, Magicuser.NAME) == 0) {
         chooseSpells(&newCharacter);
     }
 
